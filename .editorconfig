@@ -1,0 +1,7 @@
+# Top-most EditorConfig file
+root = true
+
+# Desabilitar SA1633 e SA1516 para arquivos C#
+[*.cs]
+dotnet_diagnostic.SA1633.severity = none
+dotnet_diagnostic.SA1516.severity = none 
