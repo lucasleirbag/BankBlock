@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Api/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Release
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Server=host.docker.internal;Database=BankBlockDb;User ID=sa;Password=EqaW#QTWKN2RWm#^Dt6%8hRz;Trusted_Connection=False;TrustServerCertificate=True;"
+      Jwt__Issuer: "BankBlockAuthServer"
+      Jwt__Audience: "BankBlockAPI"
+      Jwt__SecretKey: "bm5mZ2Zqa3Ryc2xyaW92eGRhLnNhZGFzXGRhd3dxZXcuL2FzZGE+KjNkPz5zd2RkLiUyM2Rhc2ExMjIxLi8="
+    ports:
+      - "5000:80"
